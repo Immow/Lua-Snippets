@@ -1,0 +1,119 @@
+//General Lua stuff
+
+{
+	"Class": {
+		"prefix": ["class"],
+		"body": [
+		  "local ${0:$TM_FILENAME_BASE} = {}",
+		  "${0:$TM_FILENAME_BASE}.__index = ${0:$TM_FILENAME_BASE}",
+		  "",
+		  "function ${0:$TM_FILENAME_BASE}.new()",
+		  "\treturn setmetatable({",
+		  "\tvar = 100,",
+		  "\t}, ${0:$TM_FILENAME_BASE})",
+		  "end",
+		  "",
+		  "function ${0:$TM_FILENAME_BASE}:update(dt)",
+		  "\t",
+		  "end",
+		  "",
+		  "function ${0:$TM_FILENAME_BASE}:draw()",
+		  "\t",
+		  "end",
+		],
+		"description": "Lua Class"
+	  },
+
+//Löve2d callbacks
+
+	"draw": {
+		"prefix": ["draw"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:draw()",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d draw callback"
+	  },
+	"mousepressed": {
+		"prefix": ["mousepressed"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:mousepressed(x,y,button,istouch,presses)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d mousepressed callback"
+	  },
+	"mousereleased": {
+		"prefix": ["mousereleased"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:mousereleased(x,y,button,istouch,presses)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d mousereleased callback"
+	  },
+	"keypressed": {
+		"prefix": ["keypressed"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:keypressed(key,scancode,isrepeat)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d keypressed callback"
+	  },
+	"keyreleased": {
+		"prefix": ["keyreleased"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:keyreleased(key,scancode)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d keyreleased callback"
+	  },
+	"load": {
+		"prefix": ["load"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:load()",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d load callback"
+	  },
+	"touchmoved": {
+		"prefix": ["touchmoved"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:touchmoved(id,x,y,dx,dy,pressure)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d touchmoved callback"
+	  },
+	"touchpressed": {
+		"prefix": ["touchpressed"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:touchpressed(id,x,y,dx,dy,pressure)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d touchpressed callback"
+	  },
+	"touchreleased": {
+		"prefix": ["touchreleased"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:touchreleased(id,x,y,dx,dy,pressure)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d touchreleased callback"
+	  },
+	"update": {
+		"prefix": ["update"],
+		"body": [
+		  "function ${1:$TM_FILENAME_BASE}:update(dt)",
+		  "\t$3",
+		  "end"
+		],
+		"description": "Löve2d update callback"
+	  },
+}
