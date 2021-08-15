@@ -1,7 +1,7 @@
 //General Lua stuff
 
 {
-	"Class": {
+	"class": {
 		"prefix": ["class"],
 		"body": [
 		  "local ${0:$TM_FILENAME_BASE} = {}",
@@ -23,6 +23,7 @@
 		],
 		"description": "Lua Class"
 	  },
+
 	"main.lua": {
 	"prefix": "main",
 	"body": [
@@ -67,6 +68,28 @@
 	],
 	"description": "main.lua"
 	},
+
+	"conf.lua": {
+		"prefix": "conf",
+		"body": [
+		  "function love.conf(t)",
+		  "\tt.title = \"${1:title name}\"",
+		  "\tt.identity = \"${2:save dir name}\"",
+		  "\tt.version = \"11.3\"",
+		  "\tt.console = true",
+		  "\tt.window.width = 540",
+		  "\tt.window.height = 888",
+		  "\tt.window.msaa = 8",
+		  "\tt.modules.joystick = false",
+		  "\tt.modules.physics = false",
+		  "\tt.externalstorage = true",
+		  "\tt.window.vsync = 0",
+		  "\tt.window.resizable = false",
+		  "end"
+		],
+		"description": "conf.lua"
+	  },
+
 //Löve2d callbacks
 
 	"draw": {
@@ -78,6 +101,7 @@
 		],
 		"description": "Löve2d draw callback"
 	  },
+
 	"mousepressed": {
 		"prefix": ["mousepressed"],
 		"body": [
@@ -87,6 +111,7 @@
 		],
 		"description": "Löve2d mousepressed callback"
 	  },
+
 	"mousereleased": {
 		"prefix": ["mousereleased"],
 		"body": [
@@ -96,6 +121,7 @@
 		],
 		"description": "Löve2d mousereleased callback"
 	  },
+
 	"keypressed": {
 		"prefix": ["keypressed"],
 		"body": [
@@ -105,6 +131,7 @@
 		],
 		"description": "Löve2d keypressed callback"
 	  },
+
 	"keyreleased": {
 		"prefix": ["keyreleased"],
 		"body": [
@@ -114,6 +141,7 @@
 		],
 		"description": "Löve2d keyreleased callback"
 	  },
+
 	"load": {
 		"prefix": ["load"],
 		"body": [
@@ -123,6 +151,7 @@
 		],
 		"description": "Löve2d load callback"
 	  },
+
 	"touchmoved": {
 		"prefix": ["touchmoved"],
 		"body": [
@@ -132,6 +161,7 @@
 		],
 		"description": "Löve2d touchmoved callback"
 	  },
+
 	"touchpressed": {
 		"prefix": ["touchpressed"],
 		"body": [
@@ -141,6 +171,7 @@
 		],
 		"description": "Löve2d touchpressed callback"
 	  },
+
 	"touchreleased": {
 		"prefix": ["touchreleased"],
 		"body": [
@@ -150,6 +181,7 @@
 		],
 		"description": "Löve2d touchreleased callback"
 	  },
+
 	"update": {
 		"prefix": ["update"],
 		"body": [
