@@ -23,7 +23,50 @@
 		],
 		"description": "Lua Class"
 	  },
-
+	"main.lua": {
+	"prefix": "main",
+	"body": [
+		"local scene",
+		"",
+		"function love.load()",
+		"\tChangeScene(\"mainmenu\")",
+		"end",
+		"",
+		"function love.update(dt)",
+		"\tif scene.update then scene:update(dt) end",
+		"end",
+		"",
+		"function love.draw()",
+		"\tif scene.draw then scene:draw() end",
+		"end",
+		"",
+		"function love.keypressed(key,scancode,isrepeat)",
+		"\tif scene.keypressed then scene:keypressed(key, scancode, isrepeat) end",
+		"end",
+		"",
+		"function love.keyreleased(key,scancode)",
+		"\tif scene.keyreleased then scene:keyreleased(key, scancode) end",
+		"end",
+		"",
+		"function love.touchpressed(id,x,y,dx,dy,p)",
+		"\tif scene.touchpressed then scene:touchpressed(id,x,y,dx,dy,p) end",
+		"end",
+		"",
+		"function love.touchreleased(id,x,y,dx,dy,p)",
+		"\tif scene.touchreleased then scene:touchreleased(id,x,y,dx,dy,p) end",
+		"end",
+		"",
+		"function main:touchmoved(id,x,y,dx,dy,p)",
+		"\tif scene.touchmoved then scene:touchmoved(id,x,y,dx,dy,p) end",
+		"end",
+		"",
+		"function ChangeScene(nextScene)",
+		"\tscene = require(\"scenes/\"..nextScene)",
+		"\tif scene.load then scene:load() end",
+		"end"
+	],
+	"description": "main.lua"
+	},
 //Löve2d callbacks
 
 	"draw": {
