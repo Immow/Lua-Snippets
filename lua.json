@@ -199,4 +199,30 @@
 		],
 		"description": "Löve2d update callback"
 	  },
+
+	  // Löve2d functions
+
+	  "circle": {
+		"prefix": ["circle"],
+		"body": [
+		  "love.graphics.circle(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.r})",
+		],
+		"description": "Löve2d circle"
+	  },
+
+	  "line": {
+		"prefix": ["line"],
+		"body": [
+		  "love.graphics.line(${1:self.x}, ${2:self.y})",
+		],
+		"description": "Löve2d line"
+	  },
+
+	  "rectangle": {
+		"prefix": ["rectangle"],
+		"body": [
+		  "love.graphics.rectangle(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.w}, ${5:self.h})",
+		],
+		"description": "Löve2d rectangle"
+	  },
 }
