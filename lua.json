@@ -57,7 +57,7 @@
 		"\tif scene.touchreleased then scene:touchreleased(id,x,y,dx,dy,p) end",
 		"end",
 		"",
-		"function main:touchmoved(id,x,y,dx,dy,p)",
+		"function love.touchmoved(id,x,y,dx,dy,p)",
 		"\tif scene.touchmoved then scene:touchmoved(id,x,y,dx,dy,p) end",
 		"end",
 		"",
