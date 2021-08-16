@@ -4,225 +4,337 @@
 	"class": {
 		"prefix": ["class"],
 		"body": [
-		  "local ${0:$TM_FILENAME_BASE} = {}",
-		  "${0:$TM_FILENAME_BASE}.__index = ${0:$TM_FILENAME_BASE}",
-		  "",
-		  "function ${0:$TM_FILENAME_BASE}.new()",
-		  "\treturn setmetatable({",
-		  "\tvar = 100,",
-		  "\t}, ${0:$TM_FILENAME_BASE})",
-		  "end",
-		  "",
-		  "function ${0:$TM_FILENAME_BASE}:update(dt)",
-		  "\t",
-		  "end",
-		  "",
-		  "function ${0:$TM_FILENAME_BASE}:draw()",
-		  "\t",
-		  "end",
+			"local ${0:$TM_FILENAME_BASE} = {}",
+			"${0:$TM_FILENAME_BASE}.__index = ${0:$TM_FILENAME_BASE}",
+			"",
+			"function ${0:$TM_FILENAME_BASE}.new()",
+			"\treturn setmetatable({",
+			"\tvar = 100,",
+			"\t}, ${0:$TM_FILENAME_BASE})",
+			"end",
+			"",
+			"function ${0:$TM_FILENAME_BASE}:update(dt)",
+			"\t",
+			"end",
+			"",
+			"function ${0:$TM_FILENAME_BASE}:draw()",
+			"\t",
+			"end",
 		],
 		"description": "Lua Class"
-	  },
+	},
 
 	"main.lua": {
-	"prefix": "main",
-	"body": [
-		"local scene",
-		"",
-		"function love.load()",
-		"\tChangeScene(\"mainmenu\")",
-		"end",
-		"",
-		"function love.update(dt)",
-		"\tif scene.update then scene:update(dt) end",
-		"end",
-		"",
-		"function love.draw()",
-		"\tif scene.draw then scene:draw() end",
-		"end",
-		"",
-		"function love.keypressed(key,scancode,isrepeat)",
-		"\tif scene.keypressed then scene:keypressed(key, scancode, isrepeat) end",
-		"end",
-		"",
-		"function love.keyreleased(key,scancode)",
-		"\tif scene.keyreleased then scene:keyreleased(key, scancode) end",
-		"end",
-		"",
-		"function love.mousepressed(x,y,button,istouch,presses)",
-		"\tif scene.mousepressed then scene:mousepressed(x,y,button,istouch,presses) end",
-		"end",
-		"",
-		"function love.mousereleased(x,y,button,istouch,presses)",
-		"\tif scene.mousereleased then scene:mousereleased(x,y,button,istouch,presses) end",
-		"end",
-		"",
-		"function love.touchpressed(id,x,y,dx,dy,pressure)",
-		"\tif scene.touchpressed then scene:touchpressed(id,x,y,dx,dy,pressure) end",
-		"end",
-		"",
-		"function love.touchreleased(id,x,y,dx,dy,pressure)",
-		"\tif scene.touchreleased then scene:touchreleased(id,x,y,dx,dy,pressure) end",
-		"end",
-		"",
-		"function love.touchmoved(id,x,y,dx,dy,pressure)",
-		"\tif scene.touchmoved then scene:touchmoved(id,x,y,dx,dy,pressure) end",
-		"end",
-		"",
-		"function ChangeScene(nextScene)",
-		"\tscene = require(\"scenes/\"..nextScene)",
-		"\tif scene.load then scene:load() end",
-		"end"
-	],
+		"prefix": "main",
+		"body": [
+			"local scene",
+			"",
+			"function love.load()",
+			"\tChangeScene(\"mainmenu\")",
+			"end",
+			"",
+			"function love.update(dt)",
+			"\tif scene.update then scene:update(dt) end",
+			"end",
+			"",
+			"function love.draw()",
+			"\tif scene.draw then scene:draw() end",
+			"end",
+			"",
+			"function love.keypressed(key,scancode,isrepeat)",
+			"\tif scene.keypressed then scene:keypressed(key, scancode, isrepeat) end",
+			"end",
+			"",
+			"function love.keyreleased(key,scancode)",
+			"\tif scene.keyreleased then scene:keyreleased(key, scancode) end",
+			"end",
+			"",
+			"function love.mousepressed(x,y,button,istouch,presses)",
+			"\tif scene.mousepressed then scene:mousepressed(x,y,button,istouch,presses) end",
+			"end",
+			"",
+			"function love.mousereleased(x,y,button,istouch,presses)",
+			"\tif scene.mousereleased then scene:mousereleased(x,y,button,istouch,presses) end",
+			"end",
+			"",
+			"function love.touchpressed(id,x,y,dx,dy,pressure)",
+			"\tif scene.touchpressed then scene:touchpressed(id,x,y,dx,dy,pressure) end",
+			"end",
+			"",
+			"function love.touchreleased(id,x,y,dx,dy,pressure)",
+			"\tif scene.touchreleased then scene:touchreleased(id,x,y,dx,dy,pressure) end",
+			"end",
+			"",
+			"function love.touchmoved(id,x,y,dx,dy,pressure)",
+			"\tif scene.touchmoved then scene:touchmoved(id,x,y,dx,dy,pressure) end",
+			"end",
+			"",
+			"function ChangeScene(nextScene)",
+			"\tscene = require(\"scenes/\"..nextScene)",
+			"\tif scene.load then scene:load() end",
+			"end"
+		],
 	"description": "main.lua"
 	},
 
 	"conf.lua": {
 		"prefix": "conf",
 		"body": [
-		  "function love.conf(t)",
-		  "\tt.title = \"${1:title name}\"",
-		  "\tt.identity = \"${2:save dir name}\"",
-		  "\tt.version = \"11.3\"",
-		  "\tt.console = true",
-		  "\tt.window.width = 540",
-		  "\tt.window.height = 888",
-		  "\tt.window.msaa = 8",
-		  "\tt.modules.joystick = false",
-		  "\tt.modules.physics = false",
-		  "\tt.externalstorage = true",
-		  "\tt.window.vsync = 0",
-		  "\tt.window.resizable = false",
-		  "end"
+			"function love.conf(t)",
+			"\tt.title = \"${1:title name}\"",
+			"\tt.identity = \"${2:save dir name}\"",
+			"\tt.version = \"11.3\"",
+			"\tt.console = true",
+			"\tt.window.width = 540",
+			"\tt.window.height = 888",
+			"\tt.window.msaa = 8",
+			"\tt.modules.joystick = false",
+			"\tt.modules.physics = false",
+			"\tt.externalstorage = true",
+			"\tt.window.vsync = 0",
+			"\tt.window.resizable = false",
+			"end"
 		],
 		"description": "conf.lua"
-	  },
+	},
 
 //Löve2d callbacks
 
 	"draw": {
-		"prefix": ["draw"],
+		"prefix": ["draw callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:draw()",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:draw()",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d draw callback"
-	  },
+	},
 
 	"mousepressed": {
-		"prefix": ["mousepressed"],
+		"prefix": ["mousepressed callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:mousepressed(x,y,button,istouch,presses)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:mousepressed(x,y,button,istouch,presses)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d mousepressed callback"
-	  },
+	},
 
 	"mousereleased": {
-		"prefix": ["mousereleased"],
+		"prefix": ["mousereleased callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:mousereleased(x,y,button,istouch,presses)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:mousereleased(x,y,button,istouch,presses)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d mousereleased callback"
-	  },
+	},
 
 	"keypressed": {
-		"prefix": ["keypressed"],
+		"prefix": ["keypressed callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:keypressed(key,scancode,isrepeat)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:keypressed(key,scancode,isrepeat)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d keypressed callback"
-	  },
+	},
 
 	"keyreleased": {
-		"prefix": ["keyreleased"],
+		"prefix": ["keyreleased callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:keyreleased(key,scancode)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:keyreleased(key,scancode)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d keyreleased callback"
-	  },
+	},
 
 	"load": {
-		"prefix": ["load"],
+		"prefix": ["load callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:load()",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:load()",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d load callback"
-	  },
+	},
 
 	"touchmoved": {
-		"prefix": ["touchmoved"],
+		"prefix": ["touchmoved callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:touchmoved(id,x,y,dx,dy,pressure)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:touchmoved(id,x,y,dx,dy,pressure)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d touchmoved callback"
-	  },
+	},
 
 	"touchpressed": {
-		"prefix": ["touchpressed"],
+		"prefix": ["touchpressed callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:touchpressed(id,x,y,dx,dy,pressure)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:touchpressed(id,x,y,dx,dy,pressure)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d touchpressed callback"
-	  },
+	},
 
 	"touchreleased": {
-		"prefix": ["touchreleased"],
+		"prefix": ["touchreleased callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:touchreleased(id,x,y,dx,dy,pressure)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:touchreleased(id,x,y,dx,dy,pressure)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d touchreleased callback"
-	  },
+	},
 
 	"update": {
-		"prefix": ["update"],
+		"prefix": ["update callback"],
 		"body": [
-		  "function ${1:$TM_FILENAME_BASE}:update(dt)",
-		  "\t$3",
-		  "end"
+			"function ${1:$TM_FILENAME_BASE}:update(dt)",
+			"\t$3",
+			"end"
 		],
 		"description": "Löve2d update callback"
-	  },
-
-	  // Löve2d functions
-
-	  "circle": {
-		"prefix": ["circle"],
+	},
+	
+	// Löve2d functions graphics
+	
+	"love.graphics.arc": {
+		"prefix": ["love.graphics.arc"],
 		"body": [
-		  "love.graphics.circle(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.r})",
+			"love.graphics.arc(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.r}, ${5:self.a1}, ${6:self.a2}, ${7:self.segments})",
+		],
+		"description": "Löve2d arc"
+	},
+	
+	"love.graphics.circle": {
+		"prefix": ["love.graphics.circle"],
+		"body": [
+			"love.graphics.circle(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.r})",
 		],
 		"description": "Löve2d circle"
-	  },
-
-	  "line": {
-		"prefix": ["line"],
+	},
+	
+	"love.graphics.clear": {
+		"prefix": ["love.graphics.clear"],
 		"body": [
-		  "love.graphics.line(${1:self.x}, ${2:self.y})",
+			"love.graphics.clear()",
+		],
+		"description": "Löve2d clear"
+	},
+	
+	"love.graphics.discard": {
+		"prefix": ["love.graphics.discard"],
+		"body": [
+			"love.graphics.discard(${1:discardcolor}, ${2:discardstencil})",
+		],
+		"description": "Löve2d discard"
+	},
+	
+	"love.graphics.draw": {
+		"prefix": ["love.graphics.draw"],
+		"body": [
+			"love.graphics.draw(\"${1:object}\", ${2:self.x}, ${3:self.y}, ${4:self.r}, ${5:self.sx}, ${6:self.sy}, ${7:self.ox}, ${8:self.oy}, ${9:self.kx}, ${10:self.ky})",
+		],
+		"description": "Löve2d draw"
+	},
+			
+	"love.graphics.drawInstanced": {
+		"prefix": ["love.graphics.drawInstanced"],
+		"body": [
+			"love.graphics.drawInstanced(${1:mesh}, ${2:instancecount}, ${3:self.x}, ${4:self.y}, ${5:self.r}, ${6:self.sx}, ${7:self.sy}, ${8:self.ox}, ${9:self.oy}, ${10:self.kx}, ${11:self.ky})",
+		],
+		"description": "Löve2d drawInstanced"
+	},
+
+		"love.graphics.drawLayer": {
+		"prefix": ["love.graphics.drawLayer"],
+		"body": [
+			"love.graphics.drawLayer(${1:texture}, ${2:layerindex}, ${3:self.x}, ${4:self.y}, ${5:self.r}, ${6:self.sx}, ${7:self.sy}, ${8:self.ox}, ${9:self.oy}, ${10:self.kx}, ${11:self.ky})",
+		],
+		"description": "Löve2d drawLayer"
+	},
+		
+		"love.graphics.ellipse": {
+		"prefix": ["love.graphics.ellipse"],
+		"body": [
+			"love.graphics.ellipse(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.rx}, ${5:self.ry})",
+		],
+		"description": "Löve2d ellipse"
+	},
+	
+	"love.graphics.flushBatch": {
+		"prefix": ["love.graphics.flushBatch"],
+		"body": [
+			"love.graphics.flushBatch()",
+		],
+		"description": "Löve2d ellipse"
+	},
+		
+	"love.graphics.line": {
+		"prefix": ["love.graphics.line"],
+		"body": [
+			"love.graphics.line(${1:self.x}, ${2:self.y})",
 		],
 		"description": "Löve2d line"
-	  },
+	},
 
-	  "rectangle": {
-		"prefix": ["rectangle"],
+	"love.graphics.point": {
+		"prefix": ["love.graphics.point"],
 		"body": [
-		  "love.graphics.rectangle(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.w}, ${5:self.h})",
+			"love.graphics.point(${1:self.x}, ${2:self.y})",
+		],
+		"description": "Löve2d point"
+	},
+
+	"love.graphics.polygon": {
+		"prefix": ["love.graphics.polygon"],
+		"body": [
+			"love.graphics.polygon(\"${1:fill}\", ${2:vertices})",
+		],
+		"description": "Löve2d polygon"
+	},
+
+	"love.graphics.present": {
+		"prefix": ["love.graphics.present"],
+		"body": [
+			"love.graphics.present()",
+		],
+		"description": "Löve2d present"
+	},
+
+	"love.graphics.print": {
+		"prefix": ["love.graphics.print"],
+		"body": [
+			"love.graphics.print(\"${1:text}\", ${2:self.x}, ${3:self.y}, ${4:self.r}, ${5:self.sx}, ${6:self.sy}, ${7:self.ox}, ${8:self.oy}, ${9:self.kx}, ${10:self.ky})",
+		],
+		"description": "Löve2d print"
+	},
+
+	"love.graphics.printf": {
+		"prefix": ["love.graphics.printf"],
+		"body": [
+			"love.graphics.printf(\"${1:text}\", ${2:self.x}, ${3:self.y}, ${4:limit}, ${5:align}, ${6:self.r}, ${7:self.sx}, ${8:self.sy}, ${9:self.ox}, ${10:self.oy}, ${11:self.ky}, ${12:self.ky})",
+		],
+		"description": "Löve2d printf"
+	},
+
+	"love.graphics.rectangle": {
+		"prefix": ["love.graphics.rectangle"],
+		"body": [
+			"love.graphics.rectangle(\"${1:fill}\", ${2:self.x}, ${3:self.y}, ${4:self.w}, ${5:self.h})",
 		],
 		"description": "Löve2d rectangle"
-	  },
+	},
+
+	"love.graphics.stencil": {
+		"prefix": ["love.graphics.stencil"],
+		"body": [
+			"love.graphics.stencil(${1:stencilfunction}, ${2:action}, ${3:value}, ${4:keepvalues})",
+		],
+		"description": "Löve2d stencil"
+	},
 }
