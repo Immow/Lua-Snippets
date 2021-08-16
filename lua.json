@@ -277,7 +277,7 @@
 	"love.graphics.line": {
 		"prefix": ["love.graphics.line"],
 		"body": [
-			"love.graphics.line(${1:self.x1}, ${2:self.y1}, ${3:self.x2}, ${4:self.y2)",
+			"love.graphics.line(${1:self.x1}, ${2:self.y1}, ${3:self.x2}, ${4:self.y2})",
 		],
 		"description": "Löve2d line"
 	},
